@@ -1,0 +1,6 @@
+{
+  "id": 1,
+  "title": "Updated automated post",
+  "body": "This post has been updated using Carina PUT request.",
+  "userId": 1
+}
