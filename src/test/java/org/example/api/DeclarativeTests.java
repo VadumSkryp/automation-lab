@@ -34,6 +34,19 @@ public class DeclarativeTests implements IAbstractTest {
         deletePost.validateResponse();
     }
 
+    @Test
+    public void testGetInvalidPost() {
+        GetInvalidUserMethod getInvalidPost = new GetInvalidUserMethod();
+        getInvalidPost.callAPIExpectSuccess();
+        getInvalidPost.validateResponse();
+    }
+
+
+
+
+
+
+
 
 
 

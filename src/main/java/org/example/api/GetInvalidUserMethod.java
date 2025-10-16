@@ -1,6 +1,5 @@
 package org.example.api;
 
-
 import com.zebrunner.carina.api.AbstractApiMethodV2;
 import com.zebrunner.carina.api.annotation.Endpoint;
 import com.zebrunner.carina.api.annotation.ResponseTemplatePath;
@@ -9,14 +8,12 @@ import com.zebrunner.carina.api.http.HttpMethodType;
 import com.zebrunner.carina.api.http.HttpResponseStatusType;
 import com.zebrunner.carina.utils.config.Configuration;
 
-@Endpoint(url = "${base_url}/posts/1", methodType = HttpMethodType.DELETE)
-@ResponseTemplatePath(path = "api/users/_delete/rs.json")
-@SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
-public class DeleteUserMethod extends AbstractApiMethodV2 {
+@Endpoint(url = "${base_url}/posts/9999", methodType = HttpMethodType.GET)
+@ResponseTemplatePath(path = "api/users/_get_invalid/rs.json")
+@SuccessfulHttpStatus(status = HttpResponseStatusType.NOT_FOUND_404)
+public class GetInvalidUserMethod extends AbstractApiMethodV2 {
 
-    public DeleteUserMethod() {
-
+    public GetInvalidUserMethod() {
         replaceUrlPlaceholder("base_url", Configuration.getRequired("api_url"));
     }
 }
-
