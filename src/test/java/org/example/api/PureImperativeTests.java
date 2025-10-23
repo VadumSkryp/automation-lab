@@ -22,7 +22,7 @@ public class PureImperativeTests {
     public void setup() {
         Properties prop = new Properties();
         try {
-            prop.load(new FileInputStream("src/main/resources/config.properties"));
+            prop.load(new FileInputStream("src/main/resources/_config.properties"));
             BASE_URL = prop.getProperty("api_url");
         } catch (IOException e) {
             e.printStackTrace();
