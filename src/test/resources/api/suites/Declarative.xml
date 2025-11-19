@@ -2,7 +2,7 @@
 <suite name="DeclarativeTests">
     <test name="DeclarativeTests">
         <classes>
-            <class name="org.example.api.DeclarativeTests"/>
+            <class name="org.example.app.DeclarativeTests"/>
         </classes>
     </test>
 </suite>

@@ -2,7 +2,7 @@
 <suite name="PureImperativeTests">
     <test name="PureImperativeTests">
         <classes>
-            <class name="org.example.api.PureImperativeTests"/>
+            <class name="org.example.app.PureImperativeTests"/>
         </classes>
     </test>
 </suite>
