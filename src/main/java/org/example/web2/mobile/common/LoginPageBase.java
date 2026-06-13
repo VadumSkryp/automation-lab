@@ -8,4 +8,6 @@ public abstract class LoginPageBase extends AbstractPage {
 
     public abstract boolean isLoginTextVisible();
     public abstract void login(String username, String password);
+    public abstract boolean issuccessMessageVisible();
+    public abstract boolean isErrorMessageVisible();
 }

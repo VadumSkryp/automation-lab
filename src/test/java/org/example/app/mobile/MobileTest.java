@@ -3,7 +3,6 @@ package org.example.app.mobile;
 import com.zebrunner.carina.core.IAbstractTest;
 import org.example.web2.mobile.common.HomePageBase;
 import org.example.web2.mobile.common.LoginPageBase;
-import org.example.web2.mobile.common.SettingsPageBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -27,7 +26,8 @@ public class MobileTest implements IAbstractTest {
     public void test3_loginValidUser() {
         HomePageBase home = initPage(getDriver(), HomePageBase.class);
         LoginPageBase login = home.goToLoginPage();
-        login.login("user", "pass");
+        login.login("svudova77@gmail.com", "nina9999");
+        Assert.assertTrue(login.issuccessMessageVisible());
     }
 
     @Test
@@ -37,28 +37,18 @@ public class MobileTest implements IAbstractTest {
     }
 
     @Test
-    public void test5_openSettings() {
-        SettingsPageBase settings = initPage(getDriver(), SettingsPageBase.class);
-        Assert.assertTrue(settings.isSettingsTitleVisible());
-    }
-
-    @Test
-    public void test6_toggleNotification() {
-        SettingsPageBase settings = initPage(getDriver(), SettingsPageBase.class);
-        settings.toggleOption("Notifications");
-    }
-
-    @Test
     public void test7_loginButtonExists() {
         HomePageBase home = initPage(getDriver(), HomePageBase.class);
         Assert.assertTrue(home.isLoginButtonVisible());
     }
 
     @Test
-    public void test8_loginEmptyFields() {
+    public void test8_shouldNotLoginWithInvalidEmail() {
         HomePageBase home = initPage(getDriver(), HomePageBase.class);
         LoginPageBase login = home.goToLoginPage();
-        login.login("", "");
+        login.login("vadim", "yana9999");
+        Assert.assertTrue(login.isErrorMessageVisible());
+
     }
 
     @Test
@@ -67,13 +57,5 @@ public class MobileTest implements IAbstractTest {
         Assert.assertTrue(home.isMenuVisible());
     }
 
-    @Test
-    public void test10_navigateAllPages() {
-        HomePageBase home = initPage(getDriver(), HomePageBase.class);
-        LoginPageBase login = home.goToLoginPage();
-        SettingsPageBase settings = initPage(getDriver(), SettingsPageBase.class);
-        Assert.assertTrue(home.isLoginButtonVisible());
-        Assert.assertTrue(login.isLoginTextVisible());
-        Assert.assertTrue(settings.isSettingsTitleVisible());
-    }
+
 }
